@@ -37,7 +37,7 @@ operación solicitada
 def printMenu():
     print("\n")
     print("Bienvenido")
-    print("*******************************************")
+    print("********************************************")
     print("Bienvenido")
     print("1- Inicializar Analizador")
     print("2- Req. 1.  Cantidad de Clusteres y verificacion de pertenencia: ")
@@ -49,7 +49,7 @@ def printMenu():
     print("8- Req. 7.  Ruta minima entre dos IP dadas")
     print("9- Req. 8.  Grafica de los requerimientos.")
     print("0- Salir")
-    print("*******************************************")
+    print("********************************************")
 
 catalog = None
 
