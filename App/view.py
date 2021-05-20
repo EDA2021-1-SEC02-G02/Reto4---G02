@@ -35,9 +35,21 @@ operación solicitada
 """
 
 def printMenu():
+    print("\n")
     print("Bienvenido")
-    print("1- Cargar información en el catálogo")
-    print("2- ")
+    print("*******************************************")
+    print("Bienvenido")
+    print("1- Inicializar Analizador")
+    print("2- Req. 1.  Cantidad de Clusteres y verificacion de pertenencia: ")
+    print("3- Req. 2.  Hallar Landing Points")
+    print("4- Req. 3.  Ruta minima en distancia que conecta dos paises")
+    print("5- Req. 4.  Red de expansion minima")
+    print("6- Req. 5.  Impacto si falla un Landing point")
+    print("7- Req. 6.  Conocer ancho de banda de un paus")
+    print("8- Req. 7.  Ruta minima entre dos IP dadas")
+    print("9- Req. 8.  Grafica de los requerimientos.")
+    print("0- Salir")
+    print("*******************************************")
 
 catalog = None
 
