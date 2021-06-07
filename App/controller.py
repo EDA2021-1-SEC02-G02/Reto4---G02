@@ -28,11 +28,40 @@ import csv
 """
 El controlador se encarga de mediar entre la vista y el modelo.
 """
+#__________________________________________________________________________
+# Inicialización del Catálogo del grafo
+def init():
+    database = model.newdatabase()
+    return database 
 
-# Inicialización del Catálogo de libros
-
+#__________________________________________________________________________
 # Funciones para la carga de datos
+def loadlpoints(database, lpoints):
+    lpoints = cf.data_dir + lpoints
+    input_file = csv.DictReader(open(lpoints, encoding="utf-8"),
+                                delimiter=",")
+    for vertex in input_file:
+        model.loadlpoints(database, vertex)
+    return database
 
+def loadconnections(database, connections):
+    connections = cf.data_dir + connections
+    input_file = csv.DictReader(open(connections, encoding="utf-8-sig"),
+                                delimiter=",")
+    for connection in input_file:
+        model.loadconnections(database, connection)
+    return database
+
+def loadcountries(database, countries):
+    countries = cf.data_dir + countries 
+    input_file = csv.DictReader(open(countries, encoding="utf-8"),
+                                delimiter=",")
+    for countrie in input_file:
+        model.loadcountries(database, countrie)
+    return database
+
+#__________________________________________________________________________
 # Funciones de ordenamiento
 
+#__________________________________________________________________________
 # Funciones de consulta sobre el catálogo

@@ -26,7 +26,6 @@ import controller
 from DISClib.ADT import list as lt
 assert cf
 
-
 """
 La vista se encarga de la interacción con el usuario
 Presenta el menu de opciones y por cada seleccion
@@ -34,12 +33,19 @@ se hace la solicitud al controlador para ejecutar la
 operación solicitada
 """
 
+
+#_________________________________________________
+connections = 'connections.csv'
+countries = 'countries.csv'
+lpoints = 'landing_points.csv'
+#_________________________________________________
+
 def printMenu():
     print("\n")
     print("Bienvenido")
     print("********************************************")
     print("Bienvenido")
-    print("1- Inicializar Analizador")
+    print("1- Cargar base de datos.")
     print("2- Req. 1.  Cantidad de Clusteres y verificacion de pertenencia: ")
     print("3- Req. 2.  Hallar Landing Points")
     print("4- Req. 3.  Ruta minima en distancia que conecta dos paises")
@@ -51,7 +57,7 @@ def printMenu():
     print("0- Salir")
     print("********************************************")
 
-catalog = None
+database = None
 
 """
 Menu principal
@@ -61,6 +67,10 @@ while True:
     inputs = input('Seleccione una opción para continuar\n')
     if int(inputs[0]) == 1:
         print("Cargando información de los archivos ....")
+        database = controller.init()
+        controller.loadlpoints(database,lpoints)
+        controller.loadconnections(database, connections)
+        controller.loadcountries(database, countries)
 
     elif int(inputs[0]) == 2:
         pass
